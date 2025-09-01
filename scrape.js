@@ -36,7 +36,6 @@ async function scrape() {
         });
       if (rowData.length) rows.push(rowData);
     });
-
     fs.writeFileSync("scraped.json", JSON.stringify(rows, null, 2));
     console.log("✅ Scraped data saved to scraped.json");
   } catch (err) {
