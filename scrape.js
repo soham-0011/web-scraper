@@ -35,9 +35,7 @@ async function scrape() {
         });
       if (rowData.length) rows.push(rowData);
     });
-
-    console.log("✅ Scraped Table Data:");
-    console.table(rows); 
+    console.log(JSON.stringify(rows, null, 2));
   } catch (err) {
     console.error(
       "❌ Scraper error:",
