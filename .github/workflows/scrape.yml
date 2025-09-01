@@ -1,6 +1,9 @@
 name: FDA Scraper
 
 on:
+  push:               # Runs on every push to the default branch
+    branches:
+      - main       
   schedule:
     - cron: "0 6 * * *" # runs every day at 06:00 UTC
   workflow_dispatch: # allow manual trigger
