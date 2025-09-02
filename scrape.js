@@ -1,6 +1,5 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const fs = require("fs");
 
 async function scrape() {
   const url =
@@ -36,11 +35,13 @@ async function scrape() {
         });
       if (rowData.length) rows.push(rowData);
     });
-
-    fs.writeFileSync("scraped.json", JSON.stringify(rows, null, 2));
-    console.log("✅ Scraped data saved to scraped.json");
+    console.log(JSON.stringify(rows, null, 2));
   } catch (err) {
-    console.error("❌ Scraper error:", err.response?.status, err.response?.statusText);
+    console.error(
+      "❌ Scraper error:",
+      err.response?.status,
+      err.response?.statusText || err.message
+    );
   }
 }
 
