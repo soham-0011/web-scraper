@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.879.0",
     "axios": "^1.11.0",
     "cheerio": "^1.1.2",
     "fs": "^0.0.1-security",
